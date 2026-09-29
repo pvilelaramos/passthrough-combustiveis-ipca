@@ -72,6 +72,7 @@ tabela_resumo <- function(irf_gas, irf_ipca, base, destino, escala = 10) {
     sprintf("\\* Efeito direto = resposta da gasolina × peso médio da gasolina no IPCA no regime (%s).",
             paste(sprintf("%s: %s%%", names(pesos), f(pesos)), collapse = "; ")),
     "A diferença entre o IPCA cheio e o efeito direto é uma estimativa dos efeitos indiretos",
-    "(frete, passagens, outros bens) e de segunda ordem.")
+    "(frete, passagens, outros bens) e de segunda ordem. Como o choque inclui o câmbio,",
+    "essa diferença também capta o repasse cambial para outros bens comercializáveis.")
   writeLines(linhas, destino, useBytes = TRUE)
 }

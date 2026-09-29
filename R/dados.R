@@ -12,7 +12,7 @@ CABECALHOS <- c(
 )
 
 # Baixa um arquivo com novas tentativas (APIs públicas oscilam)
-baixar <- function(url, tentativas = 4) {
+baixar <- function(url, tentativas = 6) {
   destino <- tempfile()
   for (i in seq_len(tentativas)) {
     ok <- tryCatch({

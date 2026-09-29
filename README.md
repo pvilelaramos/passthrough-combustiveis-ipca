@@ -9,6 +9,22 @@ preços da Petrobras?
 
 ➡️ **Tabela de resultados: [`resultados/resumo.md`](resultados/resumo.md)**
 
+## Principais resultados (amostra jul/2006 a ago/2026)
+
+Para um choque de **10% no Brent em reais**:
+
+- **Sob o PPI** (out/2016 a abr/2023), a gasolina no IPCA sobe cerca de **2,8%
+  em três meses**, e o IPCA cheio acumula **0,24 p.p. em três meses e 0,35 p.p.
+  em um ano**, todos estatisticamente significativos.
+- **Com preços controlados** (até set/2016), o repasse é **nulo**: a Petrobras
+  absorvia os choques, e a gasolina não reagia ao petróleo.
+- **Na nova estratégia** (desde mai/2023), o repasse de impacto para a gasolina
+  cai para cerca de **0,8%** e perde significância depois disso. A empresa
+  voltou a suavizar os preços, embora com menos observações.
+- O efeito **direto** (gasolina × seu peso no IPCA) explica só parte da resposta
+  do IPCA cheio. O resto soma efeitos indiretos e o repasse cambial (veja as
+  limitações).
+
 ## Por que isso importa
 
 A gasolina pesa cerca de 5% do IPCA e é um preço que responde a decisões da
@@ -89,6 +105,9 @@ reestima tudo no dia 20 de cada mês.
 - O Brent em reais é uma aproximação do custo de importação. O ideal é usar o
   preço de realização da Petrobras nas refinarias (ANP), que isola a decisão
   da empresa do resto da cadeia (distribuição, revenda, etanol anidro).
+- O choque é o Brent **em reais**, então inclui o câmbio. Uma depreciação também
+  encarece outros bens comercializáveis, o que infla a resposta do IPCA cheio.
+  O próximo passo é separar os dois choques (Brent em dólar e câmbio).
 - O regime "nova estratégia" ainda tem poucas observações, e as bandas são largas.
 - Extensões: diesel e seus efeitos via frete; assimetria entre altas e quedas
   (*rockets and feathers*); repasse para as expectativas do Focus.

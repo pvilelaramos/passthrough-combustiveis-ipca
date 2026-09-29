@@ -20,4 +20,5 @@
 Em **negrito**: intervalo de 90% não contém zero.
 \* Efeito direto = resposta da gasolina × peso médio da gasolina no IPCA no regime (Controle de preços: 4,09%; PPI: 4,85%; Nova estratégia: 5,12%).
 A diferença entre o IPCA cheio e o efeito direto é uma estimativa dos efeitos indiretos
-(frete, passagens, outros bens) e de segunda ordem.
+(frete, passagens, outros bens) e de segunda ordem. Como o choque inclui o câmbio,
+essa diferença também capta o repasse cambial para outros bens comercializáveis.
