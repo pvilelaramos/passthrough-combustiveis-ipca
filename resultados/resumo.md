@@ -1,26 +1,3 @@
-Loading required package: zoo
-
-Attaching package: ‘zoo’
-
-The following objects are masked from ‘package:base’:
-
-    as.Date, as.Date.numeric
-
-IBGE: IPCA e gasolina...
-  tabela 2938
-  tabela 1419
-  tabela 7060
-BCB: câmbio...
-  tentativa 1/4 falhou: resposta não é JSON/CSV: <?xml version="1.0" encoding="pt-br"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
-  tentativa 1/4 falhou: resposta não é JSON/CSV: <?xml version="1.0" encoding="pt-br"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
-  tentativa 2/4 falhou: resposta não é JSON/CSV: <?xml version="1.0" encoding="pt-br"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
-  tentativa 1/4 falhou: resposta não é JSON/CSV: <?xml version="1.0" encoding="pt-br"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
-FRED: Brent...
-Base: 242 meses (07/2006 a 08/2026)
 # Resultados: choque de 10% no Brent em reais
 
 *Gerado em 29/09/2026. Amostra: 07/2006 a 08/2026.*
