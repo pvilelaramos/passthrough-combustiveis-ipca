@@ -11,14 +11,6 @@ IBGE: IPCA e gasolina...
   tabela 1419
   tabela 7060
 BCB: câmbio...
-  tentativa 1/4 falhou: resposta não é JSON/CSV: <?xml version="1.0" encoding="pt-br"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
-  tentativa 1/4 falhou: resposta não é JSON/CSV: <?xml version="1.0" encoding="pt-br"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
-  tentativa 2/4 falhou: resposta não é JSON/CSV: <?xml version="1.0" encoding="pt-br"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
-  tentativa 1/4 falhou: resposta não é JSON/CSV: <?xml version="1.0" encoding="pt-br"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
 FRED: Brent...
 Base: 242 meses (07/2006 a 08/2026)
 # Resultados: choque de 10% no Brent em reais
@@ -43,4 +35,5 @@ Base: 242 meses (07/2006 a 08/2026)
 Em **negrito**: intervalo de 90% não contém zero.
 \* Efeito direto = resposta da gasolina × peso médio da gasolina no IPCA no regime (Controle de preços: 4,09%; PPI: 4,85%; Nova estratégia: 5,12%).
 A diferença entre o IPCA cheio e o efeito direto é uma estimativa dos efeitos indiretos
-(frete, passagens, outros bens) e de segunda ordem.
+(frete, passagens, outros bens) e de segunda ordem. Como o choque inclui o câmbio,
+essa diferença também capta o repasse cambial para outros bens comercializáveis.
