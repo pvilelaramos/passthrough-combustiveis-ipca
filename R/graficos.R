@@ -37,7 +37,7 @@ grafico_irf <- function(irf, titulo, destino, escala = 10) {
       title = titulo,
       subtitle = sprintf("Resposta acumulada (p.p.) a um choque de %d%% no Brent em reais · bandas de 90%%", escala),
       x = "Meses após o choque", y = NULL,
-      caption = "Fontes: IBGE, BCB, FMI/FRED. Projeções locais com erros Newey-West. Elaboração: Pedro Vilela Ramos."
+      caption = "Fontes: IBGE, BCB, EIA/Ipeadata. Projeções locais com erros Newey-West. Elaboração: Pedro Vilela Ramos."
     ) +
     tema + theme(legend.position = "none")
   ggsave(destino, g, width = 11, height = 4.2, dpi = 150, bg = SUPERFICIE)

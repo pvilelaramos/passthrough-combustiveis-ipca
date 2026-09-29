@@ -51,7 +51,7 @@ estima os efeitos indiretos (frete, passagens, outros bens).
 |---|---|
 | IPCA e IPCA-gasolina: variação mensal e peso | IBGE/SIDRA, tabelas 2938, 1419 e 7060 |
 | Câmbio R$/US$ (PTAX venda, média mensal) | BCB/SGS, série 1 |
-| Brent (US$/barril, média mensal) | FMI, via FRED (`POILBREUSDM`) |
+| Brent (US$/barril, média mensal da diária) | EIA, via Ipeadata (`EIA366_PBRENT366`); reserva: FMI via FRED |
 
 Amostra: julho de 2006 em diante.
 

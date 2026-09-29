@@ -64,8 +64,20 @@ sgs <- function(codigo, inicio = as.Date("2006-01-01"), fim = Sys.Date()) {
   aggregate(valor ~ data, x, mean)
 }
 
-# Brent (US$/barril, média mensal, FMI) via FRED ------------------------------------
+# Brent (US$/barril, média mensal) -----------------------------------------------
+# Fonte principal: Ipeadata (série diária da EIA). Reserva: FMI via FRED.
 brent <- function() {
+  x <- tryCatch({
+    j <- ler_json(paste0("http://www.ipeadata.gov.br/api/odata4/",
+                         "ValoresSerie(SERCODIGO=%27EIA366_PBRENT366%27)"))$value
+    d <- data.frame(data = primeiro_dia(as.Date(substr(j$VALDATA, 1, 10))),
+                    brent_usd = as.numeric(j$VALVALOR))
+    aggregate(brent_usd ~ data, d, mean)
+  }, error = function(e) {
+    message("  Ipeadata indisponível (", conditionMessage(e), "); usando FRED")
+    NULL
+  })
+  if (!is.null(x)) return(x)
   x <- read.csv(baixar("https://fred.stlouisfed.org/graph/fredgraph.csv?id=POILBREUSDM"),
                 na.strings = ".")
   data.frame(data = primeiro_dia(as.Date(x[[1]])), brent_usd = as.numeric(x[[2]]))
