@@ -11,9 +11,12 @@ IBGE: IPCA e gasolina...
   tabela 1419
   tabela 7060
 BCB: câmbio...
-Error in parse_con(txt, bigint_as_char) : 
-  lexical error: invalid char in json text.
-                                       <?xml version="1.0" encoding="p
-                     (right here) ------^
-Calls: montar_base ... fromJSON -> parse_and_simplify -> parseJSON -> parse_con
+FRED: Brent...
+  tentativa 1/4 falhou: URL 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=POILBREUSDM': status was 'Stream error in the HTTP/2 framing layer'
+  tentativa 2/4 falhou: URL 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=POILBREUSDM': status was 'Stream error in the HTTP/2 framing layer'
+  tentativa 3/4 falhou: URL 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=POILBREUSDM': status was 'Stream error in the HTTP/2 framing layer'
+  tentativa 4/4 falhou: URL 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=POILBREUSDM': status was 'Stream error in the HTTP/2 framing layer'
+Error in baixar("https://fred.stlouisfed.org/graph/fredgraph.csv?id=POILBREUSDM") : 
+  Não foi possível baixar: https://fred.stlouisfed.org/graph/fredgraph.csv?id=POILBREUSDM
+Calls: montar_base ... Reduce -> brent -> read.csv -> read.table -> baixar
 Execution halted
