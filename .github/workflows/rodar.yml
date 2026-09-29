@@ -1,0 +1,43 @@
+name: Estimar repasse
+
+on:
+  schedule:
+    - cron: "0 12 20 * *"   # dia 20 de cada mês, 9h de Brasília (após o IPCA)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["R/**", "run.R", "tests/**", ".github/workflows/rodar.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  estimar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Instalar pacotes
+        run: Rscript -e 'install.packages(c("jsonlite", "sandwich", "lmtest", "ggplot2"))'
+
+      - name: Teste
+        run: Rscript tests/test_lp.R
+
+      - name: Baixar dados e estimar
+        run: |
+          mkdir -p logs
+          set -o pipefail
+          Rscript run.R 2>&1 | tee logs/ultima_execucao.txt
+
+      - name: Salvar resultados
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Atualização automática: $(date +%Y-%m-%d)"
+          git push
