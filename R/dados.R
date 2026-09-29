@@ -18,6 +18,9 @@ baixar <- function(url, tentativas = 4) {
     ok <- tryCatch({
       download.file(url, destino, quiet = TRUE, method = "libcurl",
                     headers = CABECALHOS, mode = "wb")
+      # Às vezes a API devolve uma página de erro (HTML/XML) com status 200
+      inicio <- trimws(readChar(destino, 200, useBytes = TRUE))
+      if (grepl("^<", inicio)) stop("resposta não é JSON/CSV: ", substr(inicio, 1, 80))
       TRUE
     }, error = function(e) {
       message(sprintf("  tentativa %d/%d falhou: %s", i, tentativas, conditionMessage(e)))
@@ -45,7 +48,7 @@ sgs <- function(codigo, inicio = as.Date("2006-01-01"), fim = Sys.Date()) {
   partes <- list()
   ini <- inicio
   while (ini <= fim) {
-    fim_jan <- min(as.Date(sprintf("%d-12-31", as.integer(format(ini, "%Y")) + 9)), fim)
+    fim_jan <- min(as.Date(sprintf("%d-12-31", as.integer(format(ini, "%Y")) + 4)), fim)
     url <- sprintf(
       "https://api.bcb.gov.br/dados/serie/bcdata.sgs.%d/dados?formato=json&dataInicial=%s&dataFinal=%s",
       codigo, format(ini, "%d/%m/%Y"), format(fim_jan, "%d/%m/%Y")
@@ -55,6 +58,7 @@ sgs <- function(codigo, inicio = as.Date("2006-01-01"), fim = Sys.Date()) {
     ini <- as.Date(sprintf("%d-01-01", as.integer(format(fim_jan, "%Y")) + 1))
   }
   x <- do.call(rbind, partes)
+  x <- x[!duplicated(x$data), ]
   x <- data.frame(data = primeiro_dia(as.Date(x$data, "%d/%m/%Y")),
                   valor = as.numeric(x$valor))
   aggregate(valor ~ data, x, mean)
