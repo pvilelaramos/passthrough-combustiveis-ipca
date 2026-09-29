@@ -1,0 +1,19 @@
+Loading required package: zoo
+
+Attaching package: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+IBGE: IPCA e gasolina...
+  tabela 2938
+  tabela 1419
+  tabela 7060
+BCB: câmbio...
+Error in parse_con(txt, bigint_as_char) : 
+  lexical error: invalid char in json text.
+                                       <?xml version="1.0" encoding="p
+                     (right here) ------^
+Calls: montar_base ... fromJSON -> parse_and_simplify -> parseJSON -> parse_con
+Execution halted
